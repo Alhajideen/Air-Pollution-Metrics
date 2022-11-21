@@ -1,0 +1,14 @@
+.container .row img {
+  width: 100%;
+  height: 35vh;
+}
+
+.container .row {
+  width: 100%;
+  margin: auto;
+}
+
+.card-card {
+  width: 33%;
+  margin: 10px 0;
+}
