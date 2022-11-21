@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from '../props/NavBar';
 import '../../styles/details.css';
 import countriesData from '../../data/data';
@@ -10,10 +10,14 @@ import data from '../../data/data';
 
 function Details() {
   const { country } = useParams();
+  const [map, setMap] = useState('');
+  const [name, setName] = useState('');
   useEffect(() => {
     data.forEach((e) => {
       if (e.country === country) {
         console.log(e);
+        setMap(e.map);
+        setName(e.country);
         const obj = {
           lat: e.latitude,
           long: e.longitude,
@@ -28,8 +32,8 @@ function Details() {
       <div className="back-home"></div>
       <div className="county-details">
         <div className="country-info">
-          <h1>France</h1>
-          <img src={countriesData[0].map} alt="" />
+          <h1>{name}</h1>
+          <img src={map} alt="" />
         </div>
         <div className="pollution-data">
           <Table striped>
