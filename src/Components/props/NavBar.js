@@ -26,14 +26,14 @@ function NavBar() {
               navbarScroll
             >
               <Link to={'/'}>
-                <Nav.Link href="#action1">Home</Nav.Link>
+                <h5 className="nav-link">Home</h5>
               </Link>
               <Link to={'/'}>
-                <Nav.Link href="#action2">Contact Us</Nav.Link>
+                <h5 className="nav-link">Contact Us</h5>
               </Link>
             </Nav>
             <Form className="d-flex">
-              <Button variant="outline-success">Sign-Up</Button>
+              <Button variant="outline-success">Sign-Up for free</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
