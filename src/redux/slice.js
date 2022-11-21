@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = { data: [], loading: false, error: null };
 
 export const polutionSlice = createSlice({
   name: 'counter',
