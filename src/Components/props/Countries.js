@@ -23,7 +23,7 @@ function Countries() {
                     src={country.map}
                   />
                   <Card.Body>
-                    <Link to={'/details'}>
+                    <Link to={`/${country.country}`}>
                       <h6 className="country-name">
                         COUNTRY: {country.country}
                       </h6>
