@@ -1,27 +1,5 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
 <div align="center">
 
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
@@ -71,9 +49,13 @@ After you're finished please remove all the comments and instructions!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Deployment <a name="live-demo"></a>
+
+- [Click here to see live website](https://airpollution-metrics.netlify.app/)
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Available soon](https://yourdeployedapplicationlink.com)
+- [Click here to see live Demo](https://www.loom.com/share/378c9c2eab284aa6b4d1546b755a56ba)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,6 +125,7 @@ Feel free to check the [issues page](https://github.com/Alhajideen/Air-Pollution
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⭐️ Show your support <a name="support"></a>
+
 Give a ⭐️ if you like this project!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
