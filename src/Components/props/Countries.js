@@ -56,10 +56,7 @@ function Countries() {
         <div className="row">
           {info.map((country) => {
             return (
-              <div
-                className="col-sm-12 col-md-4 card-card"
-                key={country.alpha3}
-              >
+              <div className="col-sm-6 col-md-4 card-card" key={country.alpha3}>
                 <Card className="shadow p-3 mb-5 bg-white">
                   <Card.Img
                     variant="top"
