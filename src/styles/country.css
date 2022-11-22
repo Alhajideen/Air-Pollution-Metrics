@@ -1,0 +1,41 @@
+.container .row img {
+  width: 90%;
+  height: 35vh;
+}
+
+.container .row {
+  width: 100%;
+  margin: auto;
+}
+
+.card-card {
+  width: 33%;
+  margin: 20px 0;
+}
+
+.countries-container {
+  text-align: center;
+}
+
+.countries-container .countries-heading {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.countries-container .countries-heading h1 {
+  color: #44b276;
+  font-weight: 800;
+}
+
+.countries-container .countries-heading h5 {
+  color: grey;
+}
+
+.shadow a {
+  text-decoration: none;
+  color: black;
+}
+
+.country-name {
+  font-size: 20px;
+}
