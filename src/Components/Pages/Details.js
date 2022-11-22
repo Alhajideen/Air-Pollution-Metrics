@@ -20,7 +20,7 @@ function Details() {
       if (e.country === country) {
         setMap(e.map);
         setName(e.country);
-        const endPoint = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${e.latitude}&lon=${e.longitude}&appid=af2778309f98e0c5d550f18b1778fb20`;
+        const endPoint = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${e.latitude}&lon=${e.longitude}&appid=a7733a45244c59c3f4d9aa629225be4c`;
         dispatch(getPollutionData(endPoint));
       }
     });
@@ -44,7 +44,7 @@ function Details() {
                 <tr>
                   <th>#</th>
                   <th>Gas</th>
-                  <th>Ratio</th>
+                  <th>Concentration</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,7 +54,7 @@ function Details() {
                       <tr key={data[0]}>
                         <td>{i + 1}</td>
                         <td>{data[0]}</td>
-                        <td>{data[1]}</td>
+                        <td>{data[1]}µg/m3</td>
                       </tr>
                     );
                   })}
