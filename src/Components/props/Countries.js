@@ -1,16 +1,60 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import '../../styles/country.css';
+import '../../styles/nav-banner.css';
 import data from '../../data/data';
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
 
 function Countries() {
+  const [info, setInfo] = useState([]);
+  const [search, setSearch] = useState('');
+  const arr = [];
+
+  useEffect(() => {
+    setInfo(data);
+  }, []);
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    data.forEach((item) => {
+      const name = item.country.toLowerCase();
+      if (name.includes(search.toLowerCase())) {
+        arr.push(item);
+      }
+    });
+    setInfo(arr);
+  };
   return (
     <div className="container">
+      <section className="banner-section">
+        <div className="banner shadow p-3 mb-5 bg-white">
+          <div className="banner-text">
+            <h1 className="">Get air quality data </h1>
+            <h2>Where you live.</h2>
+          </div>
+          <div className="search">
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Find your country"
+                className="me-2"
+                aria-label="Search"
+                value={search}
+                onChange={(e) => handleSearch(e)}
+              />
+            </Form>
+          </div>
+        </div>
+      </section>
       <CardGroup>
+        <div className="countries-heading">
+          <h1>Countries</h1>
+          <h5>--Browse Air pollution by Country--</h5>
+        </div>
         <div className="row">
-          {data.map((country) => {
+          {info.map((country) => {
             return (
               <div
                 className="col-sm-12 col-md-4 card-card"
@@ -24,9 +68,7 @@ function Countries() {
                   />
                   <Card.Body>
                     <Link to={`/${country.country}`}>
-                      <h6 className="country-name">
-                        COUNTRY: {country.country}
-                      </h6>
+                      <h1 className="country-name">{country.country}</h1>
                     </Link>
                   </Card.Body>
                   <Card.Footer>

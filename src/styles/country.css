@@ -18,7 +18,8 @@
 }
 
 .countries-container .countries-heading {
-  margin: 20px 0;
+  margin: 20px auto;
+  width: 90%;
 }
 
 .countries-container .countries-heading h1 {
@@ -30,6 +31,11 @@
   color: grey;
 }
 
+.shadow a {
+  text-decoration: none;
+  color: black;
+}
+
 .country-name {
-  font-size: 15px;
+  font-size: 20px;
 }
