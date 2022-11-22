@@ -64,7 +64,7 @@ function Countries() {
                 />
                 <Card.Body>
                   <Link to={`/${country.country}`}>
-                    <h1 className="country-name">{country.country}</h1>
+                    <h6 className="country-name">{country.country}</h6>
                   </Link>
                 </Card.Body>
                 <Card.Footer>
