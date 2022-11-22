@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../props/NavBar';
 import '../../styles/details.css';
-import countriesData from '../../data/data';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom';
 import Footer from '../props/Footer';
 import { useParams } from 'react-router-dom';
 import data from '../../data/data';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPollutionData } from '../../redux/slice';
 
 function Details() {
   const { country } = useParams();
   const [map, setMap] = useState('');
   const [name, setName] = useState('');
+  const dispatch = useDispatch();
+
   useEffect(() => {
     data.forEach((e) => {
       if (e.country === country) {
-        console.log(e);
         setMap(e.map);
         setName(e.country);
-        const obj = {
-          lat: e.latitude,
-          long: e.longitude,
-        };
+        const endPoint = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${e.latitude}&lon=${e.longitude}&appid=af2778309f98e0c5d550f18b1778fb20`;
+        dispatch(getPollutionData(endPoint));
       }
     });
   }, []);
+  const pollutionData = useSelector((state) => state.pollution.data);
+  const loading = useSelector((state) => state.pollution.loading);
+  setTimeout(() => {
+    console.log(loading);
+  }, 3000);
+
+  // useEffect(() => {}, []);
 
   return (
     <div>
@@ -45,36 +51,16 @@ function Details() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>CO</td>
-                <td>0.42</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>CO</td>
-                <td>0.42</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>CO</td>
-                <td>0.42</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>CO</td>
-                <td>0.42</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>CO</td>
-                <td>0.42</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>CO</td>
-                <td>0.42</td>
-              </tr>
+              {pollutionData &&
+                pollutionData.map((data, i) => {
+                  return (
+                    <tr key={data[0]}>
+                      <td>{i + 1}</td>
+                      <td>{data[0]}</td>
+                      <td>{data[1]}</td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </Table>
         </div>

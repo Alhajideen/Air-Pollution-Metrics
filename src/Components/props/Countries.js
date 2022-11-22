@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import '../../styles/country.css';
@@ -6,9 +6,6 @@ import data from '../../data/data';
 import { Link } from 'react-router-dom';
 
 function Countries() {
-  useEffect(() => {
-    console.log(data);
-  }, []);
   return (
     <div className="container">
       <CardGroup>
