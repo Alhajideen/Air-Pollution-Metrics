@@ -24,3 +24,8 @@
     height: 50vh;
   }
 }
+
+.country-info {
+  width: 50%;
+  margin: auto;
+}
