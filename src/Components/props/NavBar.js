@@ -28,7 +28,7 @@ function NavBar() {
               <Link to={'/'}>
                 <h5 className="nav-link">Home</h5>
               </Link>
-              <Link to={'/'}>
+              <Link to={'/contact'}>
                 <h5 className="nav-link">Contact Us</h5>
               </Link>
             </Nav>
