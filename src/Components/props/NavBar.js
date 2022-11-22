@@ -14,7 +14,7 @@ function NavBar() {
       <Navbar bg="light" expand="lg">
         <Container fluid className="container">
           <Navbar.Brand>
-            <Link to={'/'}>
+            <Link to="/">
               <img src={Logo} alt="Site logo" />
             </Link>
           </Navbar.Brand>
@@ -25,10 +25,10 @@ function NavBar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Link to={'/'}>
+              <Link to="/">
                 <h5 className="nav-link">Home</h5>
               </Link>
-              <Link to={'/contact'}>
+              <Link to="/contact">
                 <h5 className="nav-link">Contact Us</h5>
               </Link>
             </Nav>

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from '../props/NavBar';
 import '../../styles/details.css';
 import Table from 'react-bootstrap/Table';
-import Footer from '../props/Footer';
 import { useParams } from 'react-router-dom';
-import data from '../../data/data';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPollutionData } from '../../redux/slice';
 import Loading from '../../imgs/loading.gif';
+import data from '../../data/data';
+import NavBar from '../props/NavBar';
+import Footer from '../props/Footer';
 
 function Details() {
   const { country } = useParams();
@@ -24,14 +24,14 @@ function Details() {
         dispatch(getPollutionData(endPoint));
       }
     });
-  }, []);
+  }, [dispatch]);
   const pollutionData = useSelector((state) => state.pollution.data);
   const loading = useSelector((state) => state.pollution.loading);
 
   return (
     <div>
       <NavBar />
-      <div className="back-home"></div>
+      <div className="back-home" />
       {!loading ? (
         <div className="county-details">
           <div className="country-info">
@@ -48,16 +48,17 @@ function Details() {
                 </tr>
               </thead>
               <tbody>
-                {pollutionData &&
-                  pollutionData.map((data, i) => {
-                    return (
-                      <tr key={data[0]}>
-                        <td>{i + 1}</td>
-                        <td>{data[0]}</td>
-                        <td>{data[1]}µg/m3</td>
-                      </tr>
-                    );
-                  })}
+                {pollutionData
+                  && pollutionData.map((data, i) => (
+                    <tr key={data[0]}>
+                      <td>{i + 1}</td>
+                      <td>{data[0]}</td>
+                      <td>
+                        {data[1]}
+                        µg/m3
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </Table>
           </div>

@@ -10,19 +10,19 @@ function Footer() {
   return (
     <div>
       <div className="socials-layer">
-        <a href="https://facebook.com/" target="_blank">
+        <a href="https://facebook.com/" target="_blank" rel="noreferrer">
           <img src={facebook} alt="" />
         </a>
-        <a href="https://www.twitter.com/alhaji_deen1" target="_blank">
+        <a href="https://www.twitter.com/alhaji_deen1" target="_blank" rel="noreferrer">
           <img src={twitter} alt="" />
         </a>
-        <a href="https://www.linkedin.com/in/nurudeensalifu" target="_blank">
+        <a href="https://www.linkedin.com/in/nurudeensalifu" target="_blank" rel="noreferrer">
           <img src={linkedin} alt="" />
         </a>
-        <a href="https://github.com/Alhajideen" target="_blank">
+        <a href="https://github.com/Alhajideen" target="_blank" rel="noreferrer">
           <img src={github} alt="" />
         </a>
-        <a href="https://instagram.com/Alhaji_deen1" target="_blank">
+        <a href="https://instagram.com/Alhaji_deen1" target="_blank" rel="noreferrer">
           <img src={instagram} alt="" />
         </a>
       </div>
