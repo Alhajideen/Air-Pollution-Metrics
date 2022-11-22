@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import data from '../../data/data';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPollutionData } from '../../redux/slice';
+import Loading from '../../imgs/loading.gif';
 
 function Details() {
   const { country } = useParams();
@@ -26,45 +27,46 @@ function Details() {
   }, []);
   const pollutionData = useSelector((state) => state.pollution.data);
   const loading = useSelector((state) => state.pollution.loading);
-  setTimeout(() => {
-    console.log(loading);
-  }, 3000);
-
-  // useEffect(() => {}, []);
 
   return (
     <div>
       <NavBar />
       <div className="back-home"></div>
-      <div className="county-details">
-        <div className="country-info">
-          <h1>{name}</h1>
-          <img src={map} alt="" />
+      {!loading ? (
+        <div className="county-details">
+          <div className="country-info">
+            <h1>{name}</h1>
+            <img src={map} alt="" />
+          </div>
+          <div className="pollution-data">
+            <Table striped>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Gas</th>
+                  <th>Ratio</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pollutionData &&
+                  pollutionData.map((data, i) => {
+                    return (
+                      <tr key={data[0]}>
+                        <td>{i + 1}</td>
+                        <td>{data[0]}</td>
+                        <td>{data[1]}</td>
+                      </tr>
+                    );
+                  })}
+              </tbody>
+            </Table>
+          </div>
         </div>
-        <div className="pollution-data">
-          <Table striped>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Gas</th>
-                <th>Ratio</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pollutionData &&
-                pollutionData.map((data, i) => {
-                  return (
-                    <tr key={data[0]}>
-                      <td>{i + 1}</td>
-                      <td>{data[0]}</td>
-                      <td>{data[1]}</td>
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </Table>
+      ) : (
+        <div className="loading-data">
+          <img src={Loading} alt="" />
         </div>
-      </div>
+      )}
       <Footer />
     </div>
   );
