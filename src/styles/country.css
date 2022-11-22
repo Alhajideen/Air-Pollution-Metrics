@@ -48,3 +48,14 @@
 .text-muted {
   font-size: 10px;
 }
+
+@media (min-width: 767px) {
+  .country-name {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .text-muted {
+    font-size: 15px;
+  }
+}

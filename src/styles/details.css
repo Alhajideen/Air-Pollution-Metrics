@@ -1,3 +1,17 @@
+.back-btn {
+  margin: 20px 0;
+}
+
+.back-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.back-btn button {
+  background-color: transparent;
+  border: none;
+}
+
 .county-details {
   text-align: center;
 }

@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/details.css';
 import Table from 'react-bootstrap/Table';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPollutionData } from '../../redux/slice';
 import Loading from '../../imgs/loading.gif';
 import data from '../../data/data';
 import NavBar from '../props/NavBar';
 import Footer from '../props/Footer';
+import back from '../../imgs/back.png';
 
 function Details() {
   const { country } = useParams();
   const [map, setMap] = useState('');
   const [name, setName] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     data.forEach((e) => {
@@ -31,6 +33,12 @@ function Details() {
   return (
     <div>
       <NavBar />
+      <div className="back-btn container">
+        <button type="button" onClick={() => navigate('/')}>
+          <img src={back} alt="Back" />
+          Back Home
+        </button>
+      </div>
       <div className="back-home" />
       {!loading ? (
         <div className="county-details">
