@@ -17,7 +17,7 @@ describe('Testing Profile and Mission Components', () => {
             <Home />
           </Provider>
         </Router>
-      </React.StrictMode>
+      </React.StrictMode>,
     );
     expect(home).toMatchSnapshot();
   });
@@ -30,7 +30,7 @@ describe('Testing Profile and Mission Components', () => {
             <Contact />
           </Provider>
         </Router>
-      </React.StrictMode>
+      </React.StrictMode>,
     );
     expect(contact).toMatchSnapshot();
   });
@@ -43,7 +43,7 @@ describe('Testing Profile and Mission Components', () => {
             <Details />
           </Provider>
         </Router>
-      </React.StrictMode>
+      </React.StrictMode>,
     );
     expect(details).toMatchSnapshot();
   });
