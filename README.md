@@ -132,7 +132,7 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Design Inspiration: [David Makoji](https://github.com/Alhajideen/)
+> Design Inspiration: [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
